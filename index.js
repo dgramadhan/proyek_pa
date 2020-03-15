@@ -1,15 +1,20 @@
-const http = require('http');
-const port = process.env.PORT || 3000
+var express = require('express'),
+    app = express(),
+    port = process.env.PORT || 8080;
+//     bodyParser = require('body-parser'),
+//     controller = require('./controller');
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/html');
-  res.end('<h1>Hello World</h1>');
-});
+// app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.json());
+// // kalau pengen ujicoba tanpa link comment ini dibawah
+// // app.use(express.static('public'));
+// // app.use(express.static('assets'));
+// // app.use(express.static('json'));
 
-server.listen(port,() => {
-  console.log(`Server running at port `+port);
-});
+// // 
+
+// var routes = require('./routes');
+// routes(app);
 
 app.listen(port);
 console.log('API jalan di port : ' + port);
